@@ -43,7 +43,7 @@ const getReportedUsers = report => {
 
 
 const filterOverReportedUsers = (users, k) => {
-    
+
     const blackList = []
     
     for(let [key, value] of Object.entries(users)) {
@@ -71,9 +71,9 @@ const countMail = (reporter, blackList) => {
 
 function solution(id_list, report, k) {
     
-	const reporters = setReport([...new Set(report)])
+    const reporters = setReport([...new Set(report)])
     const reportedUsers = getReportedUsers(reporters)
     const blackList = filterOverReportedUsers(reportedUsers, k)
     return id_list.map(id => countMail(reporters[id], blackList))
-    
+
 }
